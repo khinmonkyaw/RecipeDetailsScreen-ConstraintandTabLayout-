@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+>
+<androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp" app:srcCompat="@drawable/icecream"
+            android:id="@+id/imageView" android:layout_marginStart="32dp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="32dp" android:layout_marginTop="32dp"
+            app:layout_constraintTop_toTopOf="parent"
+
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="0.4" android:scaleType="centerCrop"
+            android:tint="#32000000"/>
+    <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ratingBar"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:rating="3"
+            android:numStars="5"
+            android:stepSize="0.1"
+
+            app:layout_constraintWidth_percent="0.39"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView" android:layout_marginBottom="16dp"
+            app:layout_constraintStart_toStartOf="@+id/textView5"/>
+    <TextView
+            android:text=" +135 reviewed this"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3" app:layout_constraintStart_toEndOf="@+id/ratingBar"
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toTopOf="@+id/ratingBar" app:layout_constraintBottom_toBottomOf="@+id/ratingBar"
+            app:layout_constraintEnd_toEndOf="@+id/imageView" android:layout_marginEnd="8dp" android:textSize="12sp"
+            android:textStyle="bold"/>
+    <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView5"
+            app:layout_constraintBottom_toTopOf="@+id/ratingBar" android:layout_marginBottom="8dp"
+            app:layout_constraintStart_toStartOf="@+id/imageView" android:layout_marginStart="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            android:text="Fried Ice Cream" android:textColor="#FFFFFF" android:textStyle="bold"
+            android:textSize="30sp" android:fontFamily="sans-serif-condensed"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="32dp" app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toStartOf="@+id/button2"
+            android:text="Save" android:textAllCaps="false" android:background="@drawable/round"
+            android:drawableLeft="@drawable/ic_save_gray_24dp"
+            android:paddingLeft="9dp" android:fontFamily="sans-serif-condensed"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button2"
+            app:layout_constraintStart_toEndOf="@+id/button" app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toStartOf="@+id/button3"
+            app:layout_constraintTop_toTopOf="@+id/button" app:layout_constraintBottom_toBottomOf="@+id/button"
+            android:text="Share" android:textAllCaps="false" android:background="@drawable/round"
+            android:drawableLeft="@drawable/ic_share_gray_24dp"
+            android:paddingLeft="9dp" app:layout_constraintVertical_bias="1.0"
+            android:fontFamily="sans-serif-condensed"/>
+    <Button
+            android:text="Feedback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button3"
+            app:layout_constraintStart_toEndOf="@+id/button2"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/button2" app:layout_constraintTop_toTopOf="@+id/button2"
+            android:textAllCaps="false" android:background="@drawable/round"
+            android:drawableLeft="@drawable/ic_feedback_gray_24dp"
+            android:paddingLeft="9dp"
+            android:drawablePadding="10dp"
+            android:paddingRight="9dp" android:fontFamily="sans-serif-condensed"/>
+    <com.google.android.material.tabs.TabLayout
+            android:layout_width="0dp"
+            android:layout_height="45dp" app:layout_constraintTop_toBottomOf="@+id/button"
+            app:layout_constraintStart_toStartOf="@+id/imageView" app:layout_constraintEnd_toEndOf="@+id/imageView"
+            android:layout_marginTop="32dp"
+            app:tabSelectedTextColor="#000000" android:id="@+id/tb">
+
+        <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Info"
+        />
+
+        <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Material &amp; Doing"/>
+
+        <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Video"/>
+    </com.google.android.material.tabs.TabLayout>
+    <FrameLayout
+            android:id="@+id/fl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@+id/tb" app:layout_constraintEnd_toEndOf="@+id/tb"
+            app:layout_constraintStart_toStartOf="@+id/tb">
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
